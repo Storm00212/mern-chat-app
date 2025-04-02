@@ -8,7 +8,7 @@ const Conversation = () => {
     const {selectedConversation, setSelectedConversation} = useConversation();
     
 
-    useEffect(()=>{
+     useEffect(()=>{
         const getdata=async ()=>{
             fetch('/api/users')
             .then(res=>res.json())
@@ -21,7 +21,7 @@ const Conversation = () => {
 console.log(messages);
 
   return (<>
-    <div className='py-2 flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200'>
+   {/**<div className='py-2 flex flex-col overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-200'>*/}
   {messages.map((message,index)=>{
            let isSelected = selectedConversation?._id===message._id;
 
@@ -50,7 +50,7 @@ console.log(messages);
             }
                 )
                 }
-   </div> 
+   {/**</div>*/} 
     {/* {!lastIndex && <div className='divider my-0 py-0 h-1'></div>} */}
     </> 
   )

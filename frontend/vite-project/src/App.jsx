@@ -1,5 +1,5 @@
 import './App.css';
-import Login from './pages/home/login/login';
+import Login from './pages/home/login/Login'; // Corrected case
 import SignUp from './pages/home/signup/signup'; // Corrected case
 import Home from './pages/home/home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

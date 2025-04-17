@@ -1,6 +1,6 @@
 import './App.css';
-import Login from './pages/home/login/Login';
-import SignUp from './pages/home/signup/SignUp'; // Corrected case
+import Login from './pages/home/login/login';
+import SignUp from './pages/home/signup/signup'; // Corrected case
 import Home from './pages/home/home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';

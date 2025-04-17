@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import GenderCheckbox from './Gender Checkbox';
 import { Link } from 'react-router';
 import useSignup from '../../../hooks/useSignup';

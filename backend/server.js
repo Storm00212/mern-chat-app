@@ -1,3 +1,4 @@
+import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
@@ -10,7 +11,7 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
 
 dotenv.config();
-
+const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
 
@@ -23,9 +24,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-//app.get("/", (req, res) => {
- //   res.send("Hello World");
-//});
+app.use(express.static(path.join(__dirname, "frontend/vite-project/dist")));// to serve static files from the frontend build directory
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend/vite-project", "dist" , "index.html"));// to serve the index.html file for all other routes
+});
  
     
 server.listen(PORT, () => {

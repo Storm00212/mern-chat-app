@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import Login from './pages/home/login/login';
 import SignUp from './pages/home/signup/signup';
@@ -12,9 +9,10 @@ import { Navigate } from 'react-router-dom';
 
 
 function App() {
-  const {authUser}= useAuthContext();
+  const {authUser} = useAuthContext();
   return (
     <div className='p-4 h-screen flex items-center justify-center'>
+      
       <Router>
         
         <Routes>
@@ -26,6 +24,7 @@ function App() {
         <Toaster position="top-centre"
         reverseOrder= {false}/>
       </Router>
+      
     </div>
   );
 }
